@@ -1,9 +1,8 @@
 import random
-
+from Embed_Text import ajuda_texto
+from Embed_Text import ajuda_comandos
 import discord
-
-from Bot_Token import Bot_Adm
-
+from Bot_Keys import ID_ADM
 async def handle_commands(bot, message):
     content = message.content.lower()
 
@@ -85,23 +84,23 @@ async def handle_commands(bot, message):
 
     elif content == '/ajuda':
         ajuda_message = """
-        # Laziness Bot :sloth: 
+        # Laziness Bot :sloth:
         ```
         Olá sou o Laziness Bot, o bot mais vagabundo e preguiçoso do mundo
-        feito pelo Bruno Winter pois ele esta desempregado e quer aprender a programar. ```       
-        ## Textos Disponíveis: 
-        ```
-        - "oi": Cumprimenta o usuário.
+        feito pelo Bruno Winter pois ele esta desempregado e quer aprender a programar. ```
+        ## Textos Disponíveis:
+        
+    ``` - "oi": Cumprimenta o usuário.
         - "tudo bem?": Pergunta como o usuário está.
         - "quem é um gostoso": Diz quem é um gostoso.
         - "vem na sincera": Desafia alguém para uma briga.
         - "bot burro": O bot assume que é inútil (O que é um fato).
         - "nerdola": Mostra um emoji nerd.
         - "boa noite": Deseja boa noite ao usuário.
-        - "pete": Repete a mensagem "repete". 
+        - "pete": Repete a mensagem "repete".
         - "barato": Mostra gif do barato.
-        - "au au": Mostra gif de cachorros. ```       
-        ## Comandos Disponíveis: 
+        - "au au": Mostra gif de cachorros. ```
+        ## Comandos Disponíveis:
         ```
         - "/random": Gera um número aleatório entre 1 e 100.
         - "/soun": Responde "Sim!" ou "Não!" aleatoriamente.
@@ -119,7 +118,7 @@ async def handle_commands(bot, message):
         await message.channel.send(ajuda_message)
 
     elif content == '/desligar':
-        if  message.author.id == Bot_Adm:
+        if  message.author.id in ID_ADM:
             await message.channel.send('Desligando o Bot')
             await bot.close()
         else:
@@ -129,13 +128,16 @@ async def handle_commands(bot, message):
         latency = bot.latency * 1000
         await message.channel.send(f'Pong: {latency:.2f}ms')
 
-    elif content == '/test':
+    elif content == '/help':
         embed = discord.Embed(
-            title = 'test',
-            description = 'test 2',
+            title = '*Tutorial do Laziness*',
+            description = 'Olá sou o Laziness Bot criado pelo Bruno Winter.' ,
             colour= 4175359
         )
-        embed.set_author(name='Bruno', icon_url='https://cdn-icons-png.flaticon.com/512/3819/3819144.png')
+        embed.add_field(name='Textos Disponíveis:', value=(ajuda_texto))
+        embed.add_field(name='Comandos Disponíveis:', value=(ajuda_comandos),inline=False)
+        embed.set_author(name='Laziness Bot', icon_url='https://cdn-icons-png.flaticon.com/512/3819/3819144.png')
         embed.set_thumbnail(url='https://cdn-icons-png.flaticon.com/512/7631/7631040.png')
-        embed.set_image(url='https://t4.ftcdn.net/jpg/02/55/85/89/360_F_255858973_lpDVCbqv3WQmIYAGXRO9i2m8TEctcoZE.jpg')
+        embed.set_footer(text='Alguns comandos so podem ser utilizado por usuários autorizados')
         await message.channel.send(embed = embed)
+
