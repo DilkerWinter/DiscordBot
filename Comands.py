@@ -88,8 +88,8 @@ async def handle_commands(bot, message):
         ```
         Olá sou o Laziness Bot, o bot mais vagabundo e preguiçoso do mundo
         feito pelo Bruno Winter pois ele esta desempregado e quer aprender a programar. ```
-        ## Textos Disponíveis:
         
+        ## Textos Disponíveis:
     ``` - "oi": Cumprimenta o usuário.
         - "tudo bem?": Pergunta como o usuário está.
         - "quem é um gostoso": Diz quem é um gostoso.
@@ -99,7 +99,9 @@ async def handle_commands(bot, message):
         - "boa noite": Deseja boa noite ao usuário.
         - "pete": Repete a mensagem "repete".
         - "barato": Mostra gif do barato.
-        - "au au": Mostra gif de cachorros. ```
+        - "au au": Mostra gif de cachorros.
+        - "robertinho": Mostra o Robertinho. ```
+        
         ## Comandos Disponíveis:
         ```
         - "/random": Gera um número aleatório entre 1 e 100.
@@ -140,4 +142,3 @@ async def handle_commands(bot, message):
         embed.set_thumbnail(url='https://cdn-icons-png.flaticon.com/512/7631/7631040.png')
         embed.set_footer(text='Alguns comandos so podem ser utilizado por usuários autorizados')
         await message.channel.send(embed = embed)
-
