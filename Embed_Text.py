@@ -8,7 +8,8 @@ ajuda_texto = """
 ✦ "boa noite": Deseja boa noite ao usuário.
 ✦ "pete": Repete a mensagem "repete".
 ✦ "barato": Mostra gif do barato.
-✦ "au au": Mostra gif de cachorros.```
+✦ "au au": Mostra gif de cachorros.
+✦ "robertinho": Mostra o Robertinho. ```
         """
 ajuda_comandos = """
 ```✦ "/help": Mostra o menu de ajuda.
