@@ -1,8 +1,10 @@
 import random
+import asyncio
 from Embed_Text import ajuda_texto
 from Embed_Text import ajuda_comandos
 import discord
 from Bot_Keys import ID_ADM
+from Bot_Keys import senha_desligar
 async def handle_commands(bot, message):
     content = message.content.lower()
 
@@ -118,12 +120,27 @@ async def handle_commands(bot, message):
         """
         await message.channel.send(ajuda_message)
 
-    elif content == '/desligar':
-        if  message.author.id in ID_ADM:
-            await message.channel.send('Desligando o Bot')
-            await bot.close()
-        else:
-            await message.channel.send('Você não tem permissão para desligar o Bot.')
+
+
+    elif message.content == '/desligar':
+        if message.author.id in ID_ADM:
+            await message.channel.send('Digite a senha para desligar o Bot:')
+
+            def check(m):
+                return m.author == message.author and m.channel == message.channel
+
+            try:
+                resposta = await bot.wait_for('message', check=check, timeout=30)  # Espera a resposta do mesmo usuário
+                if resposta.content == senha_desligar:
+                    await message.channel.purge(limit=2)
+                    await message.channel.send('Desligando o Bot')
+                    await bot.close()
+                else:
+                    await message.channel.send('Senha incorreta. O Bot não será desligado.')
+            except asyncio.TimeoutError:
+                await message.channel.purge(limit=1)
+                await message.channel.send('Tempo limite excedido. O Bot não será desligado.')
+
 
     elif content == '/ping':
         latency = bot.latency * 1000
