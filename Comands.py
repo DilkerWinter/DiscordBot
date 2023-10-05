@@ -92,7 +92,6 @@ async def handle_commands(bot, message):
         ## Textos Disponíveis:
     ``` - "oi": Cumprimenta o usuário.
         - "tudo bem?": Pergunta como o usuário está.
-        - "quem é um gostoso": Diz quem é um gostoso.
         - "vem na sincera": Desafia alguém para uma briga.
         - "bot burro": O bot assume que é inútil (O que é um fato).
         - "nerdola": Mostra um emoji nerd.
