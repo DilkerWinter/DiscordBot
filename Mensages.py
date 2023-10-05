@@ -10,10 +10,7 @@ async def handle_message(bot, message):
         await message.channel.send(f'Oi, {message.author.mention}!')
 
     elif content == 'tudo bem?':
-        await message.channel.send(f'Tudo e ctng lindo {message.author.mention}?')
-
-    elif content == 'quem é um gostoso?':
-        await message.channel.send(f'Obviamente {message.author.mention}!')
+        await message.channel.send(f'Tudo e com você? {message.author.mention}?')
 
     elif content == 'vem na sincera':
         await message.channel.send(f'Vem então seu fudido, bo cair no soco :rage:')
