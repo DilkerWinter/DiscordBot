@@ -1,7 +1,6 @@
 ajuda_texto = """
 ```✦ "oi": Cumprimenta o usuário.
 ✦ "tudo bem?": Pergunta como o usuário está.
-✦ "quem é um gostoso": Diz quem é um gostoso.
 ✦ "vem na sincera": O Desafia para uma briga.
 ✦ "bot burro": O bot assume que é inútil.
 ✦ "nerdola": Mostra um emoji nerd.
