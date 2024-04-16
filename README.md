@@ -8,9 +8,23 @@
 * Executa comandos
 * Responde mensagens
 
+## 💻 Pré-requisitos
+* Ter criado um bot pelo portal de Desenvolvedor do Discord
+* Adiconar arquivo Bot_Keys.py
+```
+token = 'Seu-Token'
+Bot_ADM = Id_Discord_Administrador
+Bot_ADM_2 = Id_Discord_Administrador_2
+Bot_ADM_3 = Id_Discord_Administrador_3
+senha_desligar = "Senha"
+ID_ADM = [Bot_ADM, Bot_ADM_2, Bot_ADM_3]
+```
+
+
 ## 🖼️ Imagens
 
-![image](https://github.com/DilkerWinter/DiscordBot/assets/146080789/f7b96bec-71f7-4fa4-805f-9e9e32746833)
+![image](https://github.com/DilkerWinter/DiscordBot/assets/146080789/30eeb2d1-ced6-4d75-bd7c-c5dc0dc705d3)
+
 
 
 ## 🚀 Futuras Atualizações
